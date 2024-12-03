@@ -1,78 +1,42 @@
 # CSC249SortedBag-Project
-(fill this in later)
+(This doesn't need to look pretty at all because it's not required for the project)
 
-class InventoryItem:
-    def __init__(self, name, price, count):
-        self.name = name
-        self.price = price
-        self.count = count
+# Description of the selected application and its domain. 
 
-    # Getter methods
-    def get_name(self):
-        return self.name
+I was thinking along the lines of a Sorted bag of a single kind of object. The object would have attributes for name, price, and amount. Like one object could have the name "jar of pickles" have the price of "$3.00" and have an amount of "50". When you want to update the amount or price of an item, you'd search the bag for an object with a given name then update the attributes of that object once found. The bag could have the objects sorted by price or count of the items, or alphabetized. And to add an object the user would give the name, price and amount and a new object with those attributes would be created then added to the bag. To remove a type of item from the inventory, simply give the name and the program will search them remove that object with that name from the bag. 
 
-    def get_price(self):
-        return self.price
+Something structured like this: 
 
-    def get_count(self):
-        return self.count
+Object: Inventory Item 
 
-    # Setter methods
-    def set_name(self, name):
-        self.name = name
+Attributes: 
 
-    def set_price(self, price):
-        self.price = price
+Name 
 
-    def set_count(self, count):
-        self.count = count
+Price 
 
-    # Update methods
-    def update_count(self, amount_to_update_by):
-        self.count += amount_to_update_by
+Count 
 
-    def update_price(self, amount_to_update_by):
-        self.price += amount_to_update_by
+Methods: 
+
+updateCount(amountToUpdateBy) 
+
+updatePrice(amountToUpdateBy) 
+
+Standard Getters and Setters 
 
 
-class Inventory:
-    def __init__(self):
-        self.items = []
 
-    # Method to add an item to the inventory
-    def add_item(self, name, price, count):
-        # Search if the item already exists by name
-        existing_item = next((item for item in self.items if item.get_name() == name), None)
-        if existing_item:
-            # If the item exists, update its count and price
-            existing_item.update_count(count)
-            existing_item.update_price(price)
-        else:
-            # Otherwise, create a new item and add it to the inventory
-            new_item = InventoryItem(name, price, count)
-            self.items.append(new_item)
+# Key capabilities and requirements. 
 
-    # Method to remove an item by name
-    def remove_item(self, name):
-        self.items = [item for item in self.items if item.get_name() != name]
+Add Items: Users can add new items to the inventory by specifying the name, price, and count. The application creates a new Inventory Item object and adds it to the sorted bag. 
 
-    # Method to find an item by name
-    def find_item(self, name):
-        return next((item for item in self.items if item.get_name() == name), None)
+Update Items: Users can update the price or count of existing items. The program searches for the item by name and modifies its attributes using the updatePrice and updateCount methods.  
 
-    # Method to sort inventory by price
-    def sort_by_price(self):
-        self.items.sort(key=lambda item: item.get_price())
+Remove Items: Users can remove items from the inventory by providing the item’s name and then the program searches for and deletes the corresponding InventoryItem from the bag. 
 
-    # Method to sort inventory by count
-    def sort_by_count(self):
-        self.items.sort(key=lambda item: item.get_count())
+Search and Sort: The inventory can be searched by item name. Items can be displayed sorted by price, count, or alphabetically by name 
 
-    # Method to sort inventory by name (alphabetically)
-    def sort_by_name(self):
-        self.items.sort(key=lambda item: item.get_name())
+Scalability: The system should be able to handle a large number of items efficiently, maintaining performance as the inventory grows. 
 
-    # Display the inventory items
-    def display_inventory(self):
-        for item in self.items:
-            print(f"Name: {item.get_name()}, Price: ${item.get_price():.2f}, Count: {item.get_count()}")
+User Interface: A simple and Intuitive interface for users to interact with in the inventory, possibly through a command-line interface or basic GUI. 
