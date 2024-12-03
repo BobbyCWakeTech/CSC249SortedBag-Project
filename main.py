@@ -1,4 +1,5 @@
-from inventory_classes import InventoryItem, Inventory
+from Inventory import Inventory
+from InventoryItem import InventoryItem
 
 def main():
     inventory = Inventory()
@@ -18,10 +19,13 @@ def main():
 
         if choice == '1':
             name = input("Enter item name: ")
-            price = float(input("Enter item price: "))
-            count = int(input("Enter item count: "))
-            inventory.add_item(name, price, count)
-            print(f"Added {name} to the inventory.")
+            try:
+                price = float(input("Enter item price: "))
+                count = int(input("Enter item count: "))
+                inventory.add_item(name, price, count)
+                print(f"Added {name} to the inventory.")
+            except ValueError as e:
+                print(f"Error: {e}")
 
         elif choice == '2':
             name = input("Enter item name to remove: ")
