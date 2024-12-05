@@ -1,3 +1,15 @@
+"""
+
+Module name: InventoryItem.py
+
+Purpose: Stores an item and holds attributes of that item such as the item’s name, price, and count, as well as methods to modify these attributes
+
+Author: Bobby Cooper, Jacob Norris, Kyle Smith, Matthias Cheeks, Generative AI?
+
+Date: 12/4/2024
+
+"""
+
 class InventoryItem:
     def __init__(self, name, price, count):
         self.name = name
