@@ -1,3 +1,15 @@
+"""
+
+Module name: Inventory.py
+
+Purpose: Holds the list that contains all the “InventoryItem” objects, as well as methods to sort and modify the list
+
+Author: Bobby Cooper, Jacob Norris, Kyle Smith, Matthias Cheeks, Generative AI?
+
+Date: 12/4/2024
+
+"""
+
 from InventoryItem import InventoryItem
 
 class Inventory:
