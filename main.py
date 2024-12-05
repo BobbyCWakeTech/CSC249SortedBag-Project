@@ -1,3 +1,15 @@
+"""
+
+Module name: main.py
+
+Purpose: Command line UI
+
+Author: Bobby Cooper, Jacob Norris, Kyle Smith, Matthias Cheeks, Generative AI?
+
+Date: 12/4/2024
+
+"""
+
 from Inventory import Inventory
 from InventoryItem import InventoryItem
 
